@@ -1,23 +1,30 @@
-# The DOM
+# Selecting Elements in the DOM
+
+## Problem Statement
+
+The Document Object Model, or DOM, allows us to access page elements via JavaScript and perform variety of actions with them. But before we can do anything, we have to understand more about the DOM's structure and how JavaScript interacts with it.
 
 ## Objectives
-1. Explain what the DOM is
-2. Explain the DOM hierarchy
-3. Explain how to access the DOM with JavaScript
 
-## Intro
-Let's think about Gmail for a second. When you're looking at your inbox, there are a million actions you can take. You favorite an email and the star turns yellow without a new page loading. You add a tag to an email and the tag also appears without the page reloading. Even opening an email just replaces the inbox content with the email content without loading a new page. All of this is done using JavaScript. But how was the code able to manipulate the HTML? By using, traversing and manipulating the DOM.
+1. Review the Document Object Model
+2. Identify the DOM hierarchy
+3. Explore how to access the DOM with JavaScript
 
+## Review the Document Object Model
 
-The DOM, which stands for Document Object Model, provides a way of manipulating HTML and XML documents. (We call this "way of manipulating" things an Application Programming Interface, or API — but more on those later.) The DOM provides a structural representation of the document in tree form, enabling you to modify its content and visual presentation by using a scripting language such as JavaScript.
+The DOM provides a way of manipulating HTML and XML documents. (We call this
+"way of manipulating" things an Application Programming Interface, or API — but
+more on those later.) The DOM provides a structural representation of the
+document in tree form, enabling you to modify its content and visual
+presentation by using a scripting language such as JavaScript.
 
-## The Tree
+## Identify the DOM Hierarchy
 
 ![Dom Structure Tree](https://s3.amazonaws.com/learn-verified/dom-tree.gif)
 
 ### **Window**
   + The highest level of the DOM tree is the `window` object. Think of the window as the browser window. The `window` contains the entire DOM document. All components of your HTML file will be accessible from within the window.
-  + The `window` object has a large number of properties that return information about the object. Below are a few examples
+  + The `window` object has a large number of properties that return information about the object. Below are a few examples.
 
 ```js
 window.document;
@@ -45,11 +52,12 @@ document.URL;
 // returns the URL of the document object
 ```
 
-Below the document are all the nodes representing the HTML or XML elements on the page.
+Below the document are all the nodes representing the HTML or XML elements on
+the page.
 
-## Altering The DOM
+## Explore how to access the DOM with JavaScript
 
-We can alter the DOM through several different ways:
+We can alter the DOM several different ways:
 
 1. Add/remove HTML elements in the page.
   + You can add elements with functions like `appendChild`.
@@ -63,8 +71,6 @@ We can alter the DOM through several different ways:
 4. Listen for key presses or mouse events on Elements.
   + You can add a listener directly using `addEventListener`. Elements emit an [extensive array](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) of events.
 5. Create events in the page.
-
-## Selecting Elements
 
 We can select HTML elements in the document with JavaScript and jQuery:
 
@@ -82,20 +88,32 @@ document.querySelectorAll('p');
 // and querySelectorAll have different uses
 ```
 
-Lots of developers use a library called [jQuery](https://jquery.org) for interacting with the DOM. The jQuery library provides a `jQuery` function (aliased as `$`), which wraps `document.querySelectorAll()` and adds a bit of magic.
+Lots of developers use a library called [jQuery](https://jquery.org) for
+interacting with the DOM. The jQuery library provides a `jQuery` function
+(aliased as `$`), which wraps `document.querySelectorAll()` and adds a bit of
+magic.
 
-We could write the above example in jQuery as
+We could write the above example in jQuery as:
 
 ```js
 $("p");
 ```
 
-The DOM will become increasingly important as we use JavaScript and jQuery to manipulate our sites.
+The DOM will become increasingly important as we use JavaScript and jQuery to
+manipulate our sites.
 
 ## Resources
 
 + [MDN DOM Introduction](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 + [MDN Document Properties](https://developer.mozilla.org/en-US/docs/Web/API/Document)
 + [MDN EventTarget.addEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+
+## Conclusion
+
+We covered the basics of the Document Object Model and outlined its tree
+structure. We then dived into the different ways we can use JavaScript to modify
+page elements, including adding/removing/changing HTML elements, HTML attributes
+and CSS styles, and listening for or creating events. This fundamental
+understanding of the DOM will be useful as we work more with JavaScript.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-jquery-dom-reading'>The DOM</a> on Learn.co and start learning to code for free.</p>
