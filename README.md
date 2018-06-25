@@ -2,7 +2,10 @@
 
 ## Problem Statement
 
-The Document Object Model, or DOM, allows us to access page elements via JavaScript and perform variety of actions with them. But before we can do anything, we have to understand more about the DOM's structure and how JavaScript interacts with it.
+The Document Object Model, or DOM, allows us to access page elements via
+JavaScript and perform a variety of actions with them. But before we can do
+anything, we have to understand more about the DOM's structure and how
+JavaScript interacts with it.
 
 ## Objectives
 
@@ -12,17 +15,23 @@ The Document Object Model, or DOM, allows us to access page elements via JavaScr
 
 ## Review the Document Object Model
 
-The DOM provides a way of manipulating HTML and XML documents. (We call this
-"way of manipulating" things an Application Programming Interface, or API — but
-more on those later.) The DOM provides a structural representation of the
-document in tree form, enabling you to modify its content and visual
-presentation by using a scripting language such as JavaScript.
+The DOM is an intermediate representation that is built from a page's HTML and
+CSS when the page is loaded. The DOM provides a way of manipulating the HTML it
+represents. The "way of manipulating" things is an Application Programming
+Interface, or API. The JavaScript API for DOM manipulation is a vast topic and
+so we're going to introduce it piece by piece.
+
+First, the DOM has a hierarchical structure. It represents the HTML as parent
+nodes that have children. A `<div>` parent that contains several `<p>`s is said
+to be a parent with multiple children or child-nodes. Let's see this hierarchy
+in action.
 
 ## Identify the DOM Hierarchy
 
 ![Dom Structure Tree](https://s3.amazonaws.com/learn-verified/dom-tree.gif)
 
 ### **Window**
+
   + The highest level of the DOM tree is the `window` object. Think of the window as the browser window. The `window` contains the entire DOM document. All components of your HTML file will be accessible from within the window.
   + The `window` object has a large number of properties that return information about the object. Below are a few examples.
 
@@ -38,6 +47,7 @@ window.innerHeight;
 ```
 
 ### **Document**
+
   + The `document` object represents any web page loaded in the browser. The `document` contains all the nodes that represent the HTML elements of the page. We use the `document` object to traverse through the HTML and manipulate elements.
   + There are many `document` properties that allow us to obtain information about the `document` programmatically.
 
@@ -52,10 +62,10 @@ document.URL;
 // returns the URL of the document object
 ```
 
-Below the document are all the nodes representing the HTML or XML elements on
+Below the document are all the nodes representing the HTML on
 the page.
 
-## Explore how to access the DOM with JavaScript
+## Explore How To Access the DOM with JavaScript
 
 We can alter the DOM several different ways:
 
@@ -68,13 +78,9 @@ We can alter the DOM several different ways:
   + You can remove attributes with `removeAttribute`.
 3. Add/remove/change CSS styles.
   + You can modify any DOM node's `style` property.
-4. Listen for key presses or mouse events on Elements.
-  + You can add a listener directly using `addEventListener`. Elements emit an [extensive array](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) of events.
-5. Create events in the page.
 
 We can select HTML elements in the document with JavaScript and jQuery:
 
-JS:
 ```js
 document.getElementsByTagName("p");
 //returns all p tags on a page
@@ -88,18 +94,7 @@ document.querySelectorAll('p');
 // and querySelectorAll have different uses
 ```
 
-Lots of developers use a library called [jQuery](https://jquery.org) for
-interacting with the DOM. The jQuery library provides a `jQuery` function
-(aliased as `$`), which wraps `document.querySelectorAll()` and adds a bit of
-magic.
-
-We could write the above example in jQuery as:
-
-```js
-$("p");
-```
-
-The DOM will become increasingly important as we use JavaScript and jQuery to
+The DOM will become increasingly important as we use JavaScript to
 manipulate our sites.
 
 ## Resources
